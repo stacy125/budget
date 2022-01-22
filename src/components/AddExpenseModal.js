@@ -4,12 +4,12 @@ import useBudgets, { UNCATEGORIZED_BUDGET_ID } from '../contexts/BudgetsContext'
 
 
 function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
-
+     // creates a reference ex. ref={amountRef}
     const descriptionRef = useRef()
     const amountRef = useRef()
     const budgetIdRef = useRef()
     const { addExpense, budgets } = useBudgets()
-
+//this function adds a budget using the value user types in and the ref. amount is converted from string to a floating-point number
     function handleSubmit(e) {
         e.preventDefault()
         addExpense(

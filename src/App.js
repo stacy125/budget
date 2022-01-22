@@ -16,7 +16,7 @@ function App() {
   const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState()
   const [viewExpensesModalBudgetId, setViewExpensesModalBudgetId] = useState()
   const { budgets, getBudgetExpenses } = useBudgets()
-  
+  //opens the add expense modal by the budgetId
   function openAddExpenseModal(budgetId){
     setShowAddExpenseModal(true)
     setAddExpenseModalBudgetId(budgetId)
@@ -38,6 +38,7 @@ function App() {
             alignItems: "flex-start"
           }}>
           {budgets.map(budget => {
+            //creates the amount by using the function getBudgetExpenses with the budget.id then reduce to a single number by taking the entered amount and adding to the total expenses
             const amount = getBudgetExpenses(budget.id).reduce((total, expense) => total + expense.amount, 0)
             return (<BudgetCard
               key={budget.id}

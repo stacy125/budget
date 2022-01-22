@@ -3,9 +3,11 @@ import { useRef } from "react"
 import  useBudgets from "../contexts/BudgetsContext"
 
 export default function AddBudgetModal({ show, handleClose }) {
+    // creates a reference ex. ref={nameRef}
     const nameRef = useRef()
     const maxRef = useRef()
     const { addBudget } = useBudgets()
+//this function adds a budget using the value user types in and the ref. max is converted from string to a floating-point number
     function handleSubmit(e) {
         e.preventDefault()
         addBudget({

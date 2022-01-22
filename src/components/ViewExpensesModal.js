@@ -8,6 +8,7 @@ function ViewExpenseModal({ budgetId, handleClose, defaultBudgetId }) {
     const { deleteExpense, budgets, deleteBudget, getBudgetExpenses } = useBudgets()
 
     const expenses = getBudgetExpenses(budgetId)
+    //if out budgetId is equal to UNCATEGORIZED_BUDGET_ID then it is put in the Uncategorized budget otherwise it is return in the named category that is named for that budgetId
     const budget = UNCATEGORIZED_BUDGET_ID === budgetId
         ? { name: "Uncategorized", id: UNCATEGORIZED_BUDGET_ID }
         : budgets.find(b => b.id === budgetId)

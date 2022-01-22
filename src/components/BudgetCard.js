@@ -3,6 +3,7 @@ import { Button, Card, ProgressBar, Stack } from 'react-bootstrap';
 import {currencyFormatter} from '../utils'
 
 function BudgetCard({name, amount, max, gray, hideButtons, onAddExpenseClick, onViewExpensesClick}) {
+    //set the background color based on the amount
     const classNames = []
     if (amount > max){
        classNames.push('bg-danger', 'bg-opacity-10') 
@@ -41,7 +42,7 @@ function BudgetCard({name, amount, max, gray, hideButtons, onAddExpenseClick, on
       </Card>
   );
 }
-
+// function to change the color to reflect ok, warning, danger(blue, yellow, red)
 function getProgressBarVariant(amount, max){
     const ratio = amount / max
     if(ratio < 0.5) return "primary"
